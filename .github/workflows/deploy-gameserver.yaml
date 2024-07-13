@@ -105,9 +105,9 @@ jobs:
       - name: Deploy to Kubernetes Production
         if: needs.preflight.outputs.deploy-env == 'production'
         run: |
-          kustomize build kustomize/overlays/production | kubectl apply -f -
+          kustomize build infrastruture/k8s/gameserver/overlays/production | kubectl apply -f -
       
       - name: Deploy to Kubernetes Development
         if: needs.preflight.outputs.deploy-env == 'development'
         run: |
-          kustomize build kustomize/overlays/development | kubectl apply -f -
+          kustomize build infrastruture/k8s/gameserver/overlays/development | kubectl apply -f -
