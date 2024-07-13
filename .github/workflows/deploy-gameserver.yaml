@@ -69,6 +69,7 @@ jobs:
           change_path: "gameserver"
           # Named version, will be used as suffix for name version tag
           namespace: gameserver
+          bump_each_commit: true
 
       - name: Build and push Docker image
         run: |
