@@ -7,7 +7,7 @@ on:
       - main
       - develop
     paths:
-      - gameserver
+      - gameserver/**
   workflow_dispatch:
     inputs:
       environmenmt:
