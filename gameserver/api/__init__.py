@@ -9,6 +9,6 @@ api_router = APIRouter()
 api_router.include_router(debug_router)
 @app.get("/")
 def health_check():
-    return {"status": "ok"}
+    return {"status": "ok!"}
 
 app.include_router(api_router)
