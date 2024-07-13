@@ -60,6 +60,16 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Extract version
+        id: version
+        uses: paulhatch/semantic-version@v5.4.0
+        with:
+          # Optional path to check for changes. If any changes are detected in the path the
+          # 'changed' output will true. Enter multiple paths separated by spaces.
+          change_path: "gameserver"
+          # Named version, will be used as suffix for name version tag
+          namespace: gameserver
+
       - name: Build and push Docker image
         run: |
           IMAGE_NAME=lvl13mage/steamsnstreams_gameserver:${{ needs.preflight.outputs.deploy-env }}-${{ steps.version.outputs.version }}
