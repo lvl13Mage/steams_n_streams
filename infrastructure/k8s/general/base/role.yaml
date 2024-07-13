@@ -4,7 +4,7 @@ metadata:
   name: github-deploy-role
 rules:
 - apiGroups: [""]
-  resources: ["pods", "services", "deployments", "replicasets"]
+  resources: ["pods", "services", "deployments", "replicasets", "namespaces"]
   verbs: ["get", "list", "watch", "create", "delete", "update"]
 - apiGroups: ["apps"]
   resources: ["deployments", "replicasets"]
