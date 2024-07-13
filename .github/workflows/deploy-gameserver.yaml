@@ -97,7 +97,6 @@ jobs:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBECONFIG_PRODUCTION }} # Use secret (https://developer.github.com/actions/managing-workflows/storing-secrets/)
           context: magecloud-github-deploy-sa  #If left unspecified, current-context from kubeconfig is used as default
-        id: setcontext
 
       - name: Set Context Development
         uses: azure/k8s-set-context@v1
@@ -106,10 +105,8 @@ jobs:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBECONFIG_DEVELOPMENT }} # Use secret (https://developer.github.com/actions/managing-workflows/storing-secrets/)
           context: magecloud-github-deploy-sa  #If left unspecified, current-context from kubeconfig is used as default
-        id: setcontext
 
       - uses: azure/setup-kubectl@v3
-        id: install
 
       - name: Deploy K8S Production
         working-directory: infrastructure/k8s/gameserver
