@@ -36,7 +36,7 @@ jobs:
 
     - name: Push to job output
       id: set-output
-      run: echo "deploy-env=${{ env.DEPLOY_ENV }}" >> $GITHUB_OUTPUT
+      run: echo "deploy-env=${{ env.deploy-env }}" >> $GITHUB_OUTPUT
 
   build:
     runs-on: ubuntu-latest
