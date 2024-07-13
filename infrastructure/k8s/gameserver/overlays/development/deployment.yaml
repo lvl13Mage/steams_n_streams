@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gameserver
+spec:
+  template:
+    spec:
+      containers:
+      - name: gameserver
+        image: lvl13mage/steamsnstreams_gameserver:development-latest

@@ -3,17 +3,8 @@ kind: Deployment
 metadata:
   name: gameserver
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: gameserver
   template:
-    metadata:
-      labels:
-        app: gameserver
     spec:
       containers:
       - name: gameserver
         image: lvl13mage/steamsnstreams_gameserver:production-latest
-        ports:
-        - containerPort: 80
