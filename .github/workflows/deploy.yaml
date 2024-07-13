@@ -61,5 +61,5 @@ jobs:
       - name: Build and push Docker image
         run: |
           IMAGE_NAME=your-docker-repo/gameserver:${{ needs.preflight.outputs.deploy-env }}-${{ steps.version.outputs.version }}
-          docker build -t $IMAGE_NAME -f gameserver/Dockerfile .
+          docker build -t $IMAGE_NAME -f gameserver/Dockerfile gameserver
           docker push $IMAGE_NAME
