@@ -77,6 +77,6 @@ jobs:
         run: |
           IMAGE_NAME=lvl13mage/steamsnstreams_gameserver:${{ needs.preflight.outputs.deploy-env }}-${{ steps.version.outputs.version }}
           IMAGE_NAME_LATEST=lvl13mage/steamsnstreams_gameserver:{{ needs.preflight.outputs.deploy-env }}-latest
-          docker build -t $IMAGE_NAME -f gameserver/Dockerfile gameserver
+          docker build -t $IMAGE_NAME -t $IMAGE_NAME_LATEST -f gameserver/Dockerfile gameserver
           docker push $IMAGE_NAME
           docker push $IMAGE_NAME_LATEST
