@@ -56,7 +56,7 @@ jobs:
 
       - name: Extract version
         id: version
-        uses: paulhatch/semantic-version@v5
+        uses: paulhatch/semantic-version@v5.4.0
 
       - name: Build and push Docker image
         run: |
