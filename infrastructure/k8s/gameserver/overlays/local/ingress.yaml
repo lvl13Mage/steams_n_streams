@@ -1,0 +1,16 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: gameserver
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`gameserver.browsergame.local`)
+    kind: Rule
+    services:
+    - name: gametts-service
+      port: 80
+
