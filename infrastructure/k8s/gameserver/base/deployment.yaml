@@ -15,5 +15,6 @@ spec:
       containers:
       - name: gameserver
         image: lvl13mage/steamsnstreams_gameserver:production-latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
