@@ -90,7 +90,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: azure/k8s-set-context@v1
+      - name: Set Context Production
+        uses: azure/k8s-set-context@v1
         if: needs.preflight.outputs.deploy-env == 'production'
         with:
           method: kubeconfig
@@ -98,7 +99,8 @@ jobs:
           context: magecloud-github-deploy-sa  #If left unspecified, current-context from kubeconfig is used as default
         id: setcontext
 
-        - uses: azure/k8s-set-context@v1
+      - name: Set Context Development
+        uses: azure/k8s-set-context@v1
         if: needs.preflight.outputs.deploy-env == 'development'
         with:
           method: kubeconfig
