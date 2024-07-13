@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: github-deploy-role
+rules:
+- apiGroups: [""]
+  resources: ["pods", "services", "deployments", "replicasets"]
+  verbs: ["get", "list", "watch", "create", "delete", "update"]
+- apiGroups: ["apps"]
+  resources: ["deployments", "replicasets"]
+  verbs: ["get", "list", "watch", "create", "delete", "update"]
+- apiGroups: ["batch"]
+  resources: ["jobs", "cronjobs"]
+  verbs: ["get", "list", "watch", "create", "delete", "update"]
+- apiGroups: ["traefik.io"]
+  resources: ["ingressroutes", "middlewares", "tlsoptions", "ingressroutetcps", "ingressrouteudps", "traefikservices"]
+  verbs: ["get", "list", "watch", "create", "delete", "update"]
