@@ -8,6 +8,8 @@ on:
       - develop
     paths:
       - 'gameserver/**'
+      - '.github/workflows/deploy-gameserver.yaml'
+      - 'infrastructure/k8s/gameserver/**'
   workflow_dispatch:
     inputs:
       environmenmt:
