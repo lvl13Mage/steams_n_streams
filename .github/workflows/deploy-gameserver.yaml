@@ -70,6 +70,8 @@ jobs:
           # Named version, will be used as suffix for name version tag
           namespace: gameserver
           bump_each_commit: true
+          enable_prerelease_mode: true
+          version_format: "${major}.${minor}.${patch}-prerelease${increment}"
 
       - name: Build and push Docker image
         run: |
