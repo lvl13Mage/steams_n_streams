@@ -119,4 +119,4 @@ jobs:
         if: needs.preflight.outputs.deploy-env == 'development'
         run: |
           kubectl apply -k overlays/development
-          kubectl rollout -n steamsnstreams-${{ needs.preflight.outputs.deploy-env }} deployment/gameserver
+          kubectl rollout restart -n steamsnstreams-${{ needs.preflight.outputs.deploy-env }} deployment/gameserver
