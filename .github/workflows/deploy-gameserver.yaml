@@ -12,7 +12,7 @@ on:
       - 'infrastructure/k8s/gameserver/**'
   workflow_dispatch:
     inputs:
-      environmenmt:
+      environment:
         description: "Environment"
         required: true
         default: 'development'
